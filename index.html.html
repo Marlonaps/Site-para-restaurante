@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Restaurante - Esquina do Lanche da Bento</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ff5722;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 0;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+        .card-img-top {
+            border-radius: 10px 10px 0 0;
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .btn-primary {
+            background-color: #ff5722;
+            border-color: #ff5722;
+            margin: 10px;
+        }
+        footer {
+            background-color: #ff5722;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 10px 0 5px;
+        }
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Esquina do Lanche da Bento</h1>
+    <p>Os melhores lanches e sucos da cidade!</p>
+</header>
+
+<div class="container">
+    <form id="cliente-form" class="mb-4">
+        <div class="form-group">
+            <label for="nome-cliente">Nome do Cliente:</label>
+            <input type="text" class="form-control" id="nome-cliente" placeholder="Digite o seu nome" required>
+        </div>
+        <div class="form-group">
+            <label for="telefone-cliente">Telefone:</label>
+            <input type="text" class="form-control" id="telefone-cliente" placeholder="Digite o seu telefone">
+        </div>
+        <div class="form-group">
+        <label for="endereço-cliente">Endereço:</label>
+        <input type="text" class="form-control" id="endereço-cliente" placeholder="Digite o seu endereço">
+    </form>
+
+    <h2 class="text-center mb-4">Cardápio de Lanches</h2>
+    <div class="scroll-container">
+        <div id="cardapio-lanches">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/30881378/pexels-photo-30881378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Hamburguer Angus">
+                <div class="card-body">
+                    <h5 class="title">Hamburguer Angus</h5>
+                    <p class="price">R$ 15,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="15">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/12123657/pexels-photo-12123657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Cachorro Quente">
+                <div class="card-body">
+                    <h5 class="title">Cachorro Quente do Dogão</h5>
+                    <p class="price">R$ 15,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="15">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Pizza">
+                <div class="card-body">
+                    <h5 class="title">Pizza</h5>
+                    <p class="price">R$ 13,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="13">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/7780792/pexels-photo-7780792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Omelete">
+                <div class="card-body">
+                    <h5 class="title">Omelete</h5>
+                    <p class="price">R$ 13,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="13">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Batata Frita">
+                <div class="card-body">
+                    <h5 class="title">Batata Frita</h5>
+                    <p class="price">R$ 10,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="10">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/10079672/pexels-photo-10079672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Sanduíche Natural">
+                <div class="card-body">
+                    <h5 class="title">Sanduíche Natural</h5>
+                    <p class="price">R$ 9,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4 mt-5">Sucos Disponíveis</h2>
+    <div class="text-center mb-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSucos">
+            Ver Sucos
+        </button>
+    </div>
+
+    <div class="modal fade" id="modalSucos" tabindex="-1" role="dialog" aria-labelledby="modalSucosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sucos" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSucosLabel">Sucos Disponíveis</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="max-height: 80vh; overflow-y: auto;">
+                    <div class="list-group mb-3">
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Suco de Laranja</h5>
+                            <img src="https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Suco de Laranja" class="img-fluid mb-2">
+                            <p class="mb-1">Refrescante suco natural de laranja da Serra Gaucha.</p>
+                            <small>Preço: R$ 5,50</small>
+                            <input type="number" class="form-control quantidade-suco" placeholder="Quantidade" min="0" value="0" data-preco="5.50">
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Suco de Morango</h5>
+                            <img src="https://images.pexels.com/photos/1337825/pexels-photo-1337825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid mb-2">
+                            <p class="mb-1">Delicioso suco de morango colhido nos campos de Bento Gonçalves.</p>
+                            <small>Preço: R$ 6,00</small>
+                            <input type="number" class="form-control quantidade-suco" placeholder="Quantidade" min="0" value="0" data-preco="6.00">
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Suco de Cereja</h5>
+                            <img src="https://images.pexels.com/photos/2479242/pexels-photo-2479242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid mb-2">
+                            <p class="mb-1">Delicioso suco de cereja refrescante.</p>
+                            <small>Preço: R$ 6,00</small>
+                            <input type="number" class="form-control quantidade-suco" placeholder="Quantidade" min="0" value="0" data-preco="6.00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4 mt-5">Sobremesas</h2>
+    <div class="scroll-container">
+        <div id="cardapio-sobremesas">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/6999383/pexels-photo-6999383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Pudim">
+                <div class="card-body">
+                    <h5 class="title">Pudim</h5>
+                    <p class="price">R$ 8,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="8">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/8104732/pexels-photo-8104732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Torta de Morango">
+                <div class="card-body">
+                    <h5 class="title">Torta de Morango</h5>
+                    <p class="price">R$ 20,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="20">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Bolo de Chocolate">
+                <div class="card-body">
+                    <h5 class="title">Bolo de Chocolate</h5>
+                    <p class="price">R$ 12,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="12">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/4110003/pexels-photo-4110003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Bolo Misto">
+                <div class="card-body">
+                    <h5 class="title">Bolo Misto</h5>
+                    <p class="price">R$ 19,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="19">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Bolo de Cereja">
+                <div class="card-body">
+                    <h5 class="title">Bolo de Cereja</h5>
+                    <p class="price">R$ 19,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="19">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h4 id="valor-total-geral">Valor Total Geral: R$ 0,00</h4>
+        <button class="btn btn-info" id="calcular-total-geral">Calcular Total Geral</button>
+        <button class="btn btn-success" id="efetuar-comanda-geral">Efetuar Comanda Geral</button>
+    </div>
+</div>
+
+<footer>
+    <p> Avenida Bento Gonçalves, 243- Pelotas,RS- Tel(53) 9996 21051.</p> <p>&copy; 2025 Restaurante da Bento. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+// Função para calcular o total geral
+function calcularTotalGeral() {
+    let total = 0;
+
+    // Calcular total de lanches
+    const quantidadesLanches = document.querySelectorAll('.quantidade-lanche');
+    quantidadesLanches.forEach(input => {
+        const quantidade = parseInt(input.value) || 0;
+        const preco = parseFloat(input.dataset.preco);
+        total += quantidade * preco;
+    });
+
+    // Calcular total de sucos
+    const quantidadesSucos = document.querySelectorAll('.quantidade-suco');
+    quantidadesSucos.forEach(input => {
+        const quantidade = parseInt(input.value) || 0;
+        const preco = parseFloat(input.dataset.preco);
+        total += quantidade * preco;
+    });
+
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Restaurante - Esquina do Lanche da Bento</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ff5722;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 0;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+        .card-img-top {
+            border-radius: 10px 10px 0 0;
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .btn-primary {
+            background-color: #ff5722;
+            border-color: #ff5722;
+            margin: 10px;
+        }
+        footer {
+            background-color: #ff5722;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 10px 0 5px;
+        }
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Esquina do Lanche da Bento</h1>
+    <p>Os melhores lanches e sucos da cidade!</p>
+</header>
+
+<div class="container">
+    <form id="cliente-form" class="mb-4">
+        <div class="form-group">
+            <label for="nome-cliente">Nome do Cliente:</label>
+            <input type="text" class="form-control" id="nome-cliente" placeholder="Digite o seu nome" required>
+        </div>
+        <div class="form-group">
+            <label for="telefone-cliente">Telefone:</label>
+            <input type="text" class="form-control" id="telefone-cliente" placeholder="Digite o seu telefone">
+        </div>
+        <div class="form-group">
+            <label for="endereço-cliente">Endereço:</label>
+            <input type="text" class="form-control" id="endereço-cliente" placeholder="Digite o seu endereço">
+        </div>
+    </form>
+
+    <h2 class="text-center mb-4">Cardápio de Lanches</h2>
+    <div class="scroll-container">
+        <div id="cardapio-lanches">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/30881378/pexels-photo-30881378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Hamburguer Angus">
+                <div class="card-body">
+                    <h5 class="title">Hamburguer Angus</h5>
+                    <p class="price">R$ 15,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="15">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/12123657/pexels-photo-12123657.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Cachorro Quente">
+                <div class="card-body">
+                    <h5 class="title">Cachorro Quente do Dogão</h5>
+                    <p class="price">R$ 15,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="15">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/3915857/pexels-photo-3915857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Pizza">
+                <div class="card-body">
+                    <h5 class="title">Pizza</h5>
+                    <p class="price">R$ 13,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="13">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/7780792/pexels-photo-7780792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Omelete">
+                <div class="card-body">
+                    <h5 class="title">Omelete</h5>
+                    <p class="price">R$ 13,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="13">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Batata Frita">
+                <div class="card-body">
+                    <h5 class="title">Batata Frita</h5>
+                    <p class="price">R$ 10,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="10">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/10079672/pexels-photo-10079672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Sanduíche Natural">
+                <div class="card-body">
+                    <h5 class="title">Sanduíche Natural</h5>
+                    <p class="price">R$ 9,00</p>
+                    <input type="number" class="form-control quantidade-lanche" placeholder="Quantidade" min="0" value="0" data-preco="9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4 mt-5">Sucos Disponíveis</h2>
+    <div class="text-center mb-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSucos">
+            Ver Sucos
+        </button>
+    </div>
+
+    <div class="modal fade" id="modalSucos" tabindex="-1" role="dialog" aria-labelledby="modalSucosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sucos" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSucosLabel">Sucos Disponíveis</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="max-height: 80vh; overflow-y: auto;">
+                    <div class="list-group mb-3">
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Suco de Laranja</h5>
+                            <img src="https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Suco de Laranja" class="img-fluid mb-2">
+                            <p class="mb-1">Refrescante suco natural de laranja da Serra Gaucha.</p>
+                            <small>Preço: R$ 5,50</small>
+                            <input type="number" class="form-control quantidade-suco" placeholder="Quantidade" min="0" value="0" data-preco="5.50">
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Suco de Morango</h5>
+                            <img src="https://images.pexels.com/photos/1337825/pexels-photo-1337825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid mb-2">
+                            <p class="mb-1">Delicioso suco de morango colhido nos campos de Bento Gonçalves.</p>
+                            <small>Preço: R$ 6,00</small>
+                            <input type="number" class="form-control quantidade-suco" placeholder="Quantidade" min="0" value="0" data-preco="6.00">
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1">Suco de Cereja</h5>
+                            <img src="https://images.pexels.com/photos/2479242/pexels-photo-2479242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid mb-2">
+                            <p class="mb-1">Delicioso suco de cereja refrescante.</p>
+                            <small>Preço: R$ 6,00</small>
+                            <input type="number" class="form-control quantidade-suco" placeholder="Quantidade" min="0" value="0" data-preco="6.00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4 mt-5">Sobremesas</h2>
+    <div class="scroll-container">
+        <div id="cardapio-sobremesas">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/6999383/pexels-photo-6999383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Pudim">
+                <div class="card-body">
+                    <h5 class="title">Pudim</h5>
+                    <p class="price">R$ 8,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="8">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/8104732/pexels-photo-8104732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Torta de Morango">
+                <div class="card-body">
+                    <h5 class="title">Torta de Morango</h5>
+                    <p class="price">R$ 20,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="20">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Bolo de Chocolate">
+                <div class="card-body">
+                    <h5 class="title">Bolo de Chocolate</h5>
+                    <p class="price">R$ 12,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="12">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/4110003/pexels-photo-4110003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Bolo Misto">
+                <div class="card-body">
+                    <h5 class="title">Bolo Misto</h5>
+                    <p class="price">R$ 19,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="19">
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Bolo de Cereja">
+                <div class="card-body">
+                    <h5 class="title">Bolo de Cereja</h5>
+                    <p class="price">R$ 19,00</p>
+                    <input type="number" class="form-control quantidade-sobremesa" placeholder="Quantidade" min="0" value="0" data-preco="19">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h4 id="valor-total-geral">Valor Total Geral: R$ 0,00</h4>
+        <button class="btn btn-info" id="calcular-total-geral">Calcular Total Geral</button>
+        <button class="btn btn-success" id="efetuar-comanda-geral">Efetuar Comanda Geral</button>
+        <button class="btn btn-warning" id="gerar-qrcode">Gerar QR Code</button>
+    </div>
+
+    <div class="text-center mt-4">
+        <h5>QR Code para Pagamento:</h5>
+        <div id="qrcode" style="margin-top: 20px;"></div>
+    </div>
+</div>
+
+<footer>
+    <p> Avenida Bento Gonçalves, 243- Pelotas,RS- Tel(53) 9996 21051.</p> <p>&copy; 2025 Restaurante da Bento. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-qrcode/1.0/jquery.qrcode.min.js"></script>
+<script>
+// Função para calcular o total geral
+function calcularTotalGeral() {
+    let total = 0;
+
+    // Calcular total de lanches
+    const quantidadesLanches = document.querySelectorAll('.quantidade-lanche');
+    quantidadesLanches.forEach(input => {
+        const quantidade = parseInt(input.value) || 0;
+        const preco = parseFloat(input.dataset.preco);
+        total += quantidade * preco;
+    });
+
+    // Calcular total de sucos
+    const quantidadesSucos = document.querySelectorAll('.quantidade-suco');
+    quantidadesSucos.forEach(input => {
+        const quantidade = parseInt(input.value) || 0;
+        const preco = parseFloat(input.dataset.preco);
+        total += quantidade * preco;
+    });
+
+    // Calcular total de sobremesas
+    const quantidadesSobremesas = document.querySelectorAll('.quantidade-sobremesa');
+    quantidadesSobremesas.forEach(input => {
+        const quantidade = parseInt(input.value) || 0;
+        const preco = parseFloat(input.dataset.preco);
+        total += quantidade * preco;
+    });
+
+    document.getElementById('valor-total-geral').innerText = `Valor Total Geral: R$ ${total.toFixed(2)}`;
+}
+
+// Evento para calcular o total ao clicar no botão
+document.getElementById('calcular-total-geral').addEventListener('click', calcularTotalGeral);
+
+// Evento para efetuar a comanda geral
+document.getElementById('efetuar-comanda-geral').addEventListener('click', function() {
+    const total = document.getElementById('valor-total-geral').innerText;
+    const nomeCliente = document.getElementById('nome-cliente').value;
+    const telefoneCliente = document.getElementById('telefone-cliente').value;
+
+    // Alertar o total e zerar as quantidades e o valor total
+    alert(`Comanda Geral efetuada com sucesso!\nCliente: ${nomeCliente}\nTelefone: ${telefoneCliente}\n${total}`);
+
+    // Zerar as quantidades
+    document.querySelectorAll('.quantidade-lanche').forEach(input => input.value = 0);
+    document.querySelectorAll('.quantidade-suco').forEach(input => input.value = 0);
+    document.querySelectorAll('.quantidade-sobremesa').forEach(input => input.value = 0);
+
+    // Zerar o valor total
+    document.getElementById('valor-total-geral').innerText = 'Valor Total Geral: R$ 0,00';
+});
+</script>
+
+</body>
+</html
